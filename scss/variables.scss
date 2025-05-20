@@ -1,0 +1,55 @@
+//colors
+$main_pink: rgba(238, 38, 194, 1);  //Основной розовый цвет
+$white: rgba(255,255,255,1);        //просто белый
+$bg_gray: rgba(245, 245, 245, 1);    //серый фоновый и фон в обертках файлов
+
+//размеры
+$header_circle-size: 40px;
+
+//разрешения
+  //экран
+$max-res_desktop: 1440px;
+$max-res_mobile: 846px;
+$max-res_poor-mobile: 415px;
+$adaptive_res_mobile: 768px;
+$adaptive_res_poor-mobile: 375px;
+  //блоки
+  //files
+  $max-width_file-desktop: 295px;
+  $max-width_file-mobile: 688px;
+  //chat
+  $max-width_chat-desktop: 875px;
+  $container-width-desktop: 818px;
+
+$max-height_main-block_desktop: 710px;
+
+//paddings
+  //header
+$header_pad_desktop: 120px;
+$header_pad_mobile: 40px;
+$header_pad_poor-mobile: 20px;
+  //main
+
+  //files
+  $files_pad_desktop: 28px;
+  $files_pad_mobile-TB: 30px;
+  $files_pad_mobile-RL: 20px;
+
+//fonts-size 
+$font_desktop-size: 18px;
+$font_mobile-size: 16px;
+$font_poor-mobile-size: 14px;
+  //file
+  $font_file-name-size: 15px;
+  $font_file-status-size: 12px;
+  //title
+  $font-main-title-size: 24px;
+  $font-main-title-size-mibile: 20px;
+
+//fonts-weight
+$font_w-light: 400;
+$font_w-regular: 500;
+$font_w-bold: 600;
+
+//border-radius
+$radius_block: 20px;

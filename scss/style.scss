@@ -1,0 +1,961 @@
+@import 'variables';
+@import 'mixins';
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Inter-Regular.woff2') format('woff2');
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+}
+
+header, main{
+  background-color: $bg_gray;
+
+  @media (max-width: $adaptive_res_poor-mobile) {
+    background-color: white;
+  }
+}
+.hidden {
+  display: none !important;
+}
+.container{
+  //для десктопной версии
+  margin: auto;                             
+  @include max-width($max-res_desktop, 0, $header_pad_desktop);
+  //макс.разрешение и паддинги для мобилки
+
+  @media (max-width: $adaptive_res_mobile) { 
+    @include max-width($max-res_mobile, 0, $header_pad_mobile)
+  }
+
+  //макс.разрешение и паддинги для старой мобилки
+  @media (max-width: $adaptive_res_poor-mobile) { 
+    @include max-width($max-res_poor-mobile, 0, $header_pad_poor-mobile)
+  }
+}
+.header__container{
+  padding-top: 33px;
+  padding-bottom: 34px;
+
+  @media (max-width: $adaptive_res_mobile) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: $adaptive_res_poor-mobile) {
+    padding-top: 28px;
+    padding-bottom: 20px;
+  }
+}
+
+.header__wrapper{
+  @include flexrow;
+  justify-content: space-between;
+  @include fontchange($font_desktop-size,$font_w-bold);
+  @media (max-width: $adaptive_res_mobile){
+    @include fontchange($font_mobile-size,$font_w-bold);
+  }
+  @media (max-width: $adaptive_res_poor-mobile){
+    @include fontchange($font_poor-mobile-size,$font_w-bold);
+    gap: 20px;
+  }
+}
+.header__logo-img{
+  max-width: 219px;
+  height: auto;
+  @media(max-width: $adaptive_res_mobile){
+    width: 209px;
+    height: auto;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    width: 181px;
+    height: auto;
+  }
+}
+.header__nav{
+  @include flexrow;
+
+  @media(max-width: $adaptive_res_mobile){
+
+  }
+
+  @media(max-width: $adaptive_res_poor-mobile){
+    width: 100%;
+    justify-content: space-between;
+    align-items:normal;
+  }
+}
+.header__main-nav{
+  @include flexrow;
+  justify-content: space-between;
+  gap: clamp(12px, 1.5vw, 26px);              
+  margin-right: clamp(12px, 1.5vw, 26px);     
+
+  @media (max-width: $adaptive_res_mobile) {
+    gap: clamp(12px, 1.5vw, 20px);
+    margin-right: clamp(12px, 1.5vw, 20px);
+  }
+
+  @media (max-width: $adaptive_res_poor-mobile) {           
+    gap: 0px; 
+    margin-right: 0;
+    flex-flow: column wrap;
+    align-items: normal;
+  }
+}
+.header__nav-item {             
+
+  @media (max-width: $adaptive_res_mobile){     
+    //
+  }
+
+  @media (max-width: $adaptive_res_poor-mobile){     
+    // margin-right: 0;
+    &:first-child{                                 //меняем местами convert и user
+      order: 1;
+    }
+  }
+}
+.header__nav-icon{
+  @include circle($header_circle-size, $main_pink);
+
+  @media(max-width: $adaptive_res_poor-mobile){
+    display: none;
+  }
+}
+.header__nav-link{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: clamp(5px, 1.5vw, 10px);
+}
+.header__profit{    
+  &::after{                     //знак процента после 5
+    content: '%';
+  }
+  @media (max-width: $adaptive_res_poor-mobile){    
+    @include fontchange(12px, $font_w-regular);
+    color: rgba(121, 121, 121, 1);
+    &:after{                  //знак % + "выручки" после 5
+      content: "% выручки";
+    }
+  }
+}
+.header__controls{            //правая часть меню
+  @include flexrow;
+  gap: clamp(5px, 1.5vw, 12px);   
+}
+
+.header__control-icon{
+  @include circle($header_circle-size, $white);
+
+  @media (max-width: $adaptive_res_poor-mobile){
+    background-color: $bg_gray;
+  }
+}
+
+.main__container{
+  @media(max-width: $adaptive_res_poor-mobile){
+    //
+  }
+}
+.main__wrapper{
+  @include flexrow;
+  justify-content: space-between;
+  padding-bottom: 60px;
+  @media(max-width: $adaptive_res_poor-mobile){
+    padding-bottom: 0;
+  }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+.main__files{                       //основной блок file
+  background-color:       $white;
+  width:                  100%;                
+  max-width:              $max-width_file-desktop;
+  border-radius:          $radius_block;
+  min-height:             $max-height_main-block_desktop;
+  box-shadow:             0px 5px 5px 0px rgba(0, 0, 0, 0.08);
+
+  @media(max-width: 1409px){
+    max-width: 100%;
+    margin-bottom: 20px;
+    min-height: 405px;
+  }
+
+  @media(max-width: $adaptive_res_mobile){
+    max-width: $max-width_file-mobile;
+    margin-bottom: 20px;
+    min-height: 405px;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    max-width: $max-width_file-mobile;
+    margin-bottom: 30px;
+    height: auto;       
+    min-height: unset; // Сбрасываем минимальную высоту без нее блок оставляет 405px
+    box-shadow: none;
+  }
+}
+.main__files-container{
+  @include windth_pad($max-width_file-desktop, 28px, 22px, 0, 20px);
+  margin: auto;
+
+  @media(max-width: 1409px){
+    @include windth_pad(inherit, 26px, 20px, 28px, 28px);
+  }
+
+  @media(max-width: $adaptive_res_mobile){
+    @include max-width($max-width_file-mobile, $files_pad_mobile-TB, $files_pad_mobile-RL);
+  }
+
+  @media(max-width: $adaptive_res_poor-mobile){
+    max-width: inherit;
+    padding: inherit;
+  }
+}
+
+.main__files-content{
+  @media(max-width: $adaptive_res_poor-mobile){
+    display: none;
+  }
+}
+
+.main__file-section{
+  display: flex;
+  flex-flow: column nowrap;
+
+  @media (max-width: 1409px) {                  
+    min-width: 0;                                
+    flex: 1 1 calc(50% - 10px);                   
+    box-sizing: border-box;
+    height: 296px;
+  }
+  @media (max-width: $adaptive_res-mobile) {   
+    box-sizing: border-box;
+    height: 296px;
+  } 
+}
+
+.main__file-section-header{
+  @include flexrow;
+  @include fontchange($font_desktop-size, $font_w-bold);
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.main__files-title{
+  @include fontchange($font-main-title-size, $font_w-bold);
+}
+
+.main__file-section-toggle-icon{
+  @media(max-width: 425px){   //убираем, чтобы не сильно уродовать нашу адаптивность, если пользователь будет играть с размером окна                        
+    display: none;
+  }
+}
+
+.main__files-cap{             //отступ от main__files-title
+  display: flex;
+  flex-direction: column;
+  margin-top: 46px;
+  gap:30px;
+  @media(max-width: 1409px){
+    @include flexrow;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  @media(max-width: $adaptive_res_mobile){
+    @include flexrow;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 5px;
+  }
+}
+.main__files-text{
+  text-align: center;
+  @media(max-width: $adaptive_res_mobile){
+    display: inline-block;
+    max-width: 40%;
+    text-align: left;
+  }
+  @media(max-width:520px){
+    display: none;
+  } 
+}
+//бокс для всех обеих категорий, находится сразу после заголовка "Файлы"
+.main__files-list{
+  display: none;
+  margin-top: 30px;
+  @media(max-width: 1409px){
+    margin-top:20px;
+    // @include flexrow;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+                                                  
+    flex-basis: calc(50% - 15px); // 2 колонки    //последнее-последнее
+    gap: 20px;
+  }
+  @media(max-width: 1100px){
+    margin-top:20px;
+    // @include flexrow;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // max-width: 100%;                                                   //поправить править
+    // gap: 20px;
+  }
+  @media(max-width: $adaptive_res_mobile){
+    margin-top:20px;
+    // @include flexrow;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // width: 100%;
+  }
+}
+.main__file-section--mediaplans{
+  margin-bottom: 30px;
+  @media(max-width: 1409px){
+    margin-bottom: 0;
+  }
+  @media(max-width: $adaptive_res_mobile){
+    margin-bottom: 0;
+  }
+}
+//бокс для категории:report/mediaplan и элементов внутри каждого, не включая "показать еще"
+.main__file-section-content{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Шаблон для создания file-item
+.document__item{
+  flex: 1 1 auto;                           //ПРОВЕРИТЬ, последнее исправление
+  min-width: 0; 
+  max-width: 100%;
+}
+.main__file-item{
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+//формируем обётку для file-item
+.document__content{
+  @include flexrow;
+  @include fontchange($font_file-name-size, $font_w-light); 
+  justify-content: space-between;                           
+  background-color: $bg_gray;
+  border-radius: 4px;
+  padding-left: 9px;
+  // margin-bottom: 8px;
+
+  @media(max-width: 500px){       
+    justify-content: center; 
+  }
+}
+.document__info{
+  @include flexrow;
+  @media(max-width: 500px){       
+    display: none;
+  }
+}
+.document__icon{
+  @media(max-width: 545px){
+    display: none;
+  }
+}
+.document__name{
+  margin-left: 9px;
+
+}
+
+//кнопка скачать
+.document__action-button{
+  @include circle(42px, rgb(244, 212, 237)); 
+  // @include circle(42px, rgb(235, 235, 235));         //запихать в js
+  border-radius: 4px;
+}
+  .document__action-download{
+    //
+  }
+  .document__action-refresh{
+    display: none;
+  }
+.document__status{
+  @include flexrow;
+  display: none;
+  @include fontchange($font_file-status-size, $font_w-light);
+  color: rgb(82, 82, 82);
+}
+//12  400 для статуса
+
+.document__status-indicator{                         //бейдж статуса, серый/зеленый
+  margin-right: 5px;
+  @include circle (16px, rgb(148, 148, 148));
+  // @include circle (16px, rgb(28, 195, 55));      //запихать в js
+}
+.document__status-text{
+  @media (max-width: 615px){
+    display: none;
+  }
+}
+
+.document__status-icon--success{        //икона статуса при формировании - успех
+  display: none;
+}
+.document__status-icon--processing{     //икона статуса при формировании - в процессе
+  display: none;
+}
+//Колнец тела шаблона
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.main__file-showmore{
+  display: none;
+  @include fontchange($font_file-name-size, $font_w-light);
+  margin-top: 12px;
+  color: $main_pink;
+  align-self: end;
+  &:visited{
+    color: $main_pink;
+  }
+}
+.main__files-links{
+  display: none;
+  @media (max-width: $adaptive_res_poor-mobile){
+    @include flexrow;
+    @include fontchange($font_poor-mobile-size, $font_w-bold);
+    justify-content: left;
+    gap: 12px;
+
+    div{
+      display: none;
+    }
+  }
+
+}
+.main__files-link{
+  @include flexrow;
+  padding: 12px;
+  border: solid 1px $main_pink;
+  border-radius: 4px;
+  &:nth-child(2){
+    border: solid 1px rgba(38, 118, 238, 1);
+  }
+}
+.main__files-link-text{
+  margin-right: 10px;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Стили для шаблона оповещения
+.notification__container {
+  align-self: center; // Центрируем уведомление
+  width: 80%;
+  max-width: 100%;
+  
+  @media(max-width: $adaptive_res_poor-mobile) {
+    width: 90%;
+  }
+}
+  
+.notification__text{
+  text-align: center;
+}
+  
+.notification__name {
+  @include fontchange(14px, $font-w-bold);
+  color: rgb(0, 0, 0);
+  display: block;
+  margin-bottom: 4px;
+}
+  
+.notification__status {
+  @include fontchange(12px, $font-w-light);
+  color: rgba(82, 82, 82, 1);
+  display: block;
+}
+  
+.notification__time{
+  color: rgba(82, 82, 82, 1);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+ 
+.main__chat{
+  max-width: $max-width_chat-desktop;
+  width: 100%;
+  min-height: $max-height_main-block_desktop;
+  background-color: $white;
+  border-radius: 20px;
+  box-shadow:  0px 5px 5px 0px rgba(0, 0, 0, 0.08);
+
+  @media(max-width: 1409px){
+    //min-height: 1440px;               //ПРОВЕРИТЬ!!!!
+    max-width: none;
+    min-height: 709px;
+  }
+
+  @media(max-width: $adaptive_res-mobile){
+    min-height: 709px;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    min-height: 633px;
+    box-shadow: none;
+  }
+}
+.main__chat-container{
+  width: 100%;
+  padding: 26px 20px 28px 28px;
+  margin: 0 auto;
+
+  @media(max-width: 1409px){
+    //
+  }
+
+  @media(max-width: $adaptive_res-mobile){
+    
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    padding: 0;
+  }
+}
+.main__chat-wrapper{
+  min-height: 0;
+  //height: 596px;
+}
+.main__chat-header{
+  @include flexrow;
+  justify-content: space-between;
+  margin-bottom: 19px;
+  @media(max-width: $adaptive_res_poor-mobile){
+    // margin-bottom: 20px;
+    padding-bottom: 20px;
+    background-color: $white;
+  }
+}
+.main__chat-title{
+  @include fontchange($font-main-title-size, $font_w-bold);
+  margin-right: clamp(10px, 9vw, 150px);
+  
+  @media(max-width: $adaptive_res-mobile){
+    margin-right: 5px;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    @include fontchange($font-main-title-size-mibile, $font_w-bold);
+    margin-right: 0;
+  }
+}
+.main__chat-user-info{
+  @include flexrow;
+  gap: 10px;
+  flex-shrink: 0;
+  @media(max-width: 520px){
+    flex-direction: column;
+    align-items: start;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    @include flexrow;
+    order: 1;
+  }
+}
+.main__chat-name{
+  @include fontchange($font_file-name-size, $font_w-bold);
+}
+.main__chat-email{
+  @include fontchange($font_file-name-size, $font_w-light);
+  color: rgba(82, 82, 82, 1);
+  &:visited{
+    color: rgba(82, 82, 82, 1);
+  }
+}
+.main__chat-toggle-icon{
+  @include circle (40px, $bg_gray);
+
+}
+.main__chat-settings-list {
+  display: none;
+  position: absolute;
+  width: 332px;
+  height: 82px;
+  transform: translate(-292px, 8px);
+  padding: 16px 30px;
+  text-align: right;
+  border-radius: 4px;
+  box-shadow: 0 15px 30px 10px rgba(0, 0, 0, 0.08);
+  @media(max-width: 440px){
+    width: 270px;
+    height: 70px;
+    transform: translate(-230px, 8px);
+    padding: 10px 10px;
+  }
+}
+
+.main__chat-toggle-input {
+  display: none;
+  
+  &:checked ~ .main__chat-settings-list {
+    display: flex;
+    flex-flow: column;
+    background-color: $white;
+    gap: 12px;
+    @media(max-width: $adaptive_res_poor-mobile){
+      gap: 5px;
+    }
+  }
+}
+.main__chat-settings-link{
+  position: relative;
+  flex-shrink: 0;
+  @include fontchange($font_mobile-size, $font_w-regular);
+
+  @media(max-width: 440px){
+    @include fontchange($font_poor-mobile-size, $font_w-regular);
+  }
+  
+  &:hover{
+    color: $main_pink;
+  }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Окно чата
+.main__chat-body{
+  background-color: rgba(235, 235, 235, 1);
+  border-radius: 20px;
+  @media(max-width: $adaptive_res_poor-mobile){
+    border-radius: 0;
+    margin-left: -20px; 
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+  }
+}
+.main__chat-cap{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  @media(max-width: $adaptive_res-mobile){
+    padding-top: 55px;
+    
+  }
+}
+.main__chat-output{                         
+  height: 389px;            
+  overflow-y: auto;         
+  display: flex;
+  background-color: rgba(235, 235, 235, 1);
+  border-radius: 20px;
+  @media (max-width: $adaptive_res_poor-mobile) {
+    min-height: 435px;
+  }
+}
+
+.main__chat-talk {
+  flex-grow: 1;         
+  padding: 20px 26px; 
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.main__chat-date{
+  @include fontchange(15px, $font-w-light);
+  color: rgba(82, 82, 82, 1);
+  align-self: center;
+  padding-top: 49px;
+  @media (max-width: $adaptive_res_poor-mobile){
+    padding-top: 30px;
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Шаблон сообщения
+.message__container{
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 13px;
+  width: fit-content;
+  max-width: 80%;
+  @media(max-width: $adaptive_res_poor-mobile){
+    max-width: 100%;
+    gap: 10px;
+  }
+}
+.my-message {
+  align-self: flex-end;  
+  width: auto;          
+}
+
+.message__image-container{
+  flex-grow: 1;
+}
+
+.message__image{
+  width: 49px;
+  max-width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  object-fit: cover;
+  @media(max-width: $adaptive_res_poor-mobile){
+    width: 36px;
+    max-width: 36px;
+    height: 36px;
+  }
+}
+.message__content{
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+}
+
+.message__text {
+  @include fontchange(16px, $font_w-regular);
+  padding: 16px 22px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  color: #000000;
+  width: fit-content;         
+  word-wrap: break-word;      
+  overflow-wrap: break-word;  
+  word-break: break-word;    
+
+  @media(max-width: $adaptive_res_poor-mobile){
+    @include fontchange(14px, $font_w-regular);
+    max-width: 100%
+  }
+}
+
+.message__info{
+  @include flexrow;
+  gap: 9px;
+}
+
+.message__owner{
+  @include fontchange(18px, $font-w-bold);
+}
+
+.message__time{
+  @include fontchange(15px, $font-w-light);
+  color: rgba(82, 82, 82, 1);
+}
+
+.my-message {
+  .message__text {
+    background-color: #ffffff;
+    padding: 16px 22px;
+    width: fit-content; 
+    margin-left: auto;   
+  }
+}
+
+.my-message{ 
+  .message__time {
+    margin-left: auto;    
+  }
+}
+/// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.main__chat-cap-ico{
+
+  @media(max-width: $adaptive_res-mobile){
+    max-width: 180px;
+    height: auto;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    max-width: 130px;
+    height: auto;
+  }
+
+}
+.main__chat-cap-text{
+  width: 55%;
+  @include fontchange($font_mobile-size, $font_w-regular);
+  margin-top: 20px;
+  text-align: center;
+  line-height: 145%;
+  @media(max-width: 560px){
+    width: 80%;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    @include fontchange($font_poor-mobile-size,$font_w-regular);
+    width: 80%;
+  }
+}
+.main__chat-input{
+  background-color: $white;
+  border-radius: 20px;
+  background-color: rgb(235, 235, 235, 1);
+}
+.main__chat-orders{
+  @include flexrow;
+  gap: 12px;
+  @include fontchange($font_mobile-size, $font_w-bold);
+  color: $white;
+  padding: 0 20px 20px 20px;
+  background-color: rgba(235, 235, 235, 1);;
+  @media(max-width: 551px){
+    flex-flow: column nowrap;
+    align-items: end;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    flex-flow: column nowrap;
+    align-items: end;
+    font-size: 14px;
+  }
+
+}
+.main__chat-order{
+  padding: 12px 22px;
+  background-color: $main_pink;
+  border-radius: 21px;
+}
+.main__chat-mediaplanorder{
+  @media(max-width: $adaptive_res_poor-mobile){
+    // order: 1;
+  }
+  @media(max-width: 560px){
+    order: 1;
+  }
+}
+.main__chat-reportorder{
+  background-color: rgba(38, 118, 238, 1);
+  @media(max-width: 560px){
+  }
+}
+.main__chat-message-box{
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 20px 39px 20px 20px;
+  border-radius: 20px;
+  background-color: $white;
+  max-height: 144px;
+  border: 2px solid rgba(235, 235, 235, 1);
+    &:focus-within {              //меняем цвет border при фокусе всех дочерних
+      border-top: 2px solid;
+      border-color: $main_pink;
+    }
+}
+.main__chat-textarea{
+  outline: none;
+  resize: none;
+  &::placeholder{
+    @include fontchange($font_file-name-size, $font_w-light)
+  }
+  &:focus{
+    &::placeholder{
+      color: transparent;
+    }
+  }
+
+  @media(max-width: $adaptive_res_poor-mobile){
+    //
+  }
+}
+.main__chat-attach{
+  @include flexrow;
+  gap: 20px;
+}
+.main__chat-actions{
+  @include flexrow;
+  justify-content: space-between;
+  align-items: end;
+}
+.main__chat-enter{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.main__chat-send{
+  @include circle(50px, $main_pink);
+}
+.main__chat-enter-text{
+  @include fontchange(10px, $font_w-light);
+  @media (max-width: $adaptive_res_poor-mobile) {
+    display: none;
+  }
+}
+/////////////////////////////////////////////////////////
+footer{
+  background-color: rgba(235, 235, 235, 1);
+  @media(max-width: $adaptive_res_poor-mobile){
+    background-color: $white;
+  }
+}
+.footer__container{
+  
+}
+.footer__nav{
+  @include flexrow;
+  justify-content: space-between;
+  // padding: 27.5px 0;
+  gap: clamp(10px, 1.5vw, 15px);
+
+  @media (max-width: $adaptive_res_mobile){
+    padding-top: 40px;
+    & > .footer__item:nth-child(3) { order: 2; } // email    -> 5
+    & > .footer__item:nth-child(4) { order: 1; } // lang-link -> 4
+    & > .footer__item:nth-child(1) { width: 49%; } // logo
+    & > .footer__item:nth-child(2) { width: 49%; } // Confi
+  }  
+  @media(max-width: $adaptive_res_poor-mobile){
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    & > .footer__item:nth-child(3) { order: 0; } // email    -> 5
+    & > .footer__item:nth-child(4) { order: 0; } // lang-link -> 4
+    padding-bottom: 40px;
+  }
+}
+.footer__logo{
+  @media (max-width: $adaptive_res_mobile){
+    max-width: 209px;
+    height: auto;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    max-width: 181px;
+    height: auto;
+  }
+}
+
+.footer__item{
+  padding: 27.5px 0px;
+  @include flexrow;
+  gap: 12px;
+  @media(max-width: $adaptive_res_mobile){
+    padding: 12px 0px;
+  }
+  @media(max-width: $adaptive_res_poor-mobile){
+    padding: 0px 0px;
+  }
+}
+.footer__link{
+  @include flexrow;
+  white-space: nowrap;
+  gap: 14px
+}
+.footer__lang-link{
+  text-transform: uppercase;
+
+  &.footer__lang-link--active {  
+    color: $main_pink;
+  }
+}
+.footer__link,
+.footer__lang-link {
+  color: rgba(82, 82, 82, 1);
+  font-size: $font_file-name-size;
+  font-weight: $font_w-regular;
+  line-height: 145%;
+  @media(max-width: $adaptive_res_poor-mobile){
+    font-size: $font_poor-mobile-size;
+    font-weight: $font_w-regular;
+  }
+}

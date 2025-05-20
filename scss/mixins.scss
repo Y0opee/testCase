@@ -1,0 +1,27 @@
+@mixin circle($size,$color){        // все круги в дэшборде
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  background-color: $color;
+}
+@mixin flexrow{                     // флекс с дирекшном - строка
+  display: flex;
+  flex-flow: row wrap;
+  align-items:center;
+}
+@mixin fontchange($size, $weight){  //смена размера и толщины текста
+  font-size: $size;
+  font-weight: $weight;
+}
+@mixin max-width($max-width, $paddingTB, $paddingLR){ 
+  max-width: $max-width;
+  padding: $paddingTB $paddingLR;
+}
+
+@mixin windth_pad($max-width, $paddingt, $paddingr, $paddingb, $paddingl){ 
+  max-width: $max-width;
+  padding: $paddingt $paddingr $paddingb $paddingl;
+}

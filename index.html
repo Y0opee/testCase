@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/defaultstyle.css">
+  <link rel="preload" href="./fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="./js/script.js" async></script>
+  <title>PinkChicken</title>
+</head>
+<body>
+  <header>
+      <div class="container header__container">
+        <div class="header__wrapper">
+          <div class="header__logo">                                          <!-- Лого PinkChicken -->
+            <img class="header__logo-img" src="./img/pinkchicken_header.png" alt="site logo">
+          </div>
+          <nav class="header__nav" aria-label="Main navigation">              <!-- Navigation -->
+            <ul class="header__main-nav">
+              <li class="header__nav-item">                                   <!-- profit -->
+                <a href="" class="header__nav-link">
+                  <div class="header__nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 5.56H22" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M15.65 10.5H14.22C12.44 10.5 12 10.06 12 8.3V4.2C12 2.44 12.44 2 14.22 2H19.78C21.56 2 22 2.44 22 4.2V8.31C22 10.07 21.56 10.51 19.78 10.51" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M2 17.06H12" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M5.5 22H4.22C2.44 22 2 21.56 2 19.8V15.7C2 13.94 2.44 13.5 4.22 13.5H9.78C11.56 13.5 12 13.94 12 15.7V19.81C12 21.57 11.56 22.01 9.78 22.01" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M22 15C22 18.87 18.87 22 15 22L16.05 20.25" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M2 9C2 5.13 5.13 2 9 2L7.95001 3.75" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="header__profit">5</span>
+                </a>
+              </li>
+              <li class="header__nav-item">                               <!--user's Email-->
+                <a href="" class="header__nav-link">
+                  <div class="header__nav-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15.02 3.01001C14.18 2.37001 13.14 2 12 2C9.24 2 7 4.24 7 7C7 9.76 9.24 12 12 12C14.76 12 17 9.76 17 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="header__user-email">Username@adaurum.ru</span>
+                </a>
+              </li>
+            </ul>
+                  
+            <ul class="header__controls">                                 <!--Settings & exit-->
+              <li class="header__control-item">                           <!--Settings-->
+                <a href="" class="header__control-link">
+                <div class="header__control-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 12C15 10.34 13.66 9 12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C12.41 15 12.81 14.92 13.17 14.76" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6.88 20.58L7.97 21.21C8.76 21.68 9.78 21.4 10.25 20.61L10.36 20.42C11.26 18.85 12.74 18.85 13.65 20.42L13.76 20.61C14.23 21.4 15.25 21.68 16.04 21.21L17.77 20.22C18.68 19.7 18.99 18.53 18.47 17.63C17.56 16.06 18.3 14.78 20.11 14.78C21.15 14.78 22.01 13.93 22.01 12.88V11.12C22.01 10.08 21.16 9.22001 20.11 9.22001C19.1 9.22001 18.42 8.82001 18.18 8.19001C17.99 7.70001 18.07 7.06001 18.47 6.37001C18.99 5.46001 18.68 4.30001 17.77 3.78001L16.96 3.32001" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.64 3.58C12.74 5.15 11.26 5.15 10.35 3.58L10.24 3.39C9.78 2.6 8.76 2.32 7.97 2.79L6.24 3.78C5.33 4.3 5.02 5.47 5.54 6.38C6.45 7.94 5.71 9.22 3.9 9.22C2.86 9.22 2 10.07 2 11.12V12.88C2 13.92 2.85 14.78 3.9 14.78C5.71 14.78 6.45 16.06 5.54 17.63" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </a>
+              </li>                                   
+              <li class="header__control-item">                           <!--Exit-->
+                <a href="" class="header__control-link">
+                  <div class="header__control-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 12H14.88" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12.65 8.65002L16 12L12.65 15.35" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M21.5 13V15.26C21.5 19.73 19.71 21.52 15.24 21.52H15.11C11.09 21.52 9.24003 20.07 8.91003 16.53" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M8.90002 7.55999C9.21002 3.95999 11.06 2.48999 15.11 2.48999H15.24C19.71 2.48999 21.5 4.27999 21.5 8.74999" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          </div>
+      </div>
+  </header>
+  <main>
+    
+    <!-- шаблоны -->
+    <!-- файл -->
+    <template class="document-template" id="document-template-id">
+        <div class="main__file-item main__mediaplans-item document">
+          <!-- Обёртка файла -->
+          <div class="document__content">
+            <div class="document__info">
+              <svg class="document__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 2H17C19 2 20 3 20 5V6.38" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 13.02V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 14.99V17C22 21 21 22 17 22H7C3 22 2 21 2 17" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.24147 11.6364L7.20453 13.3353L8.17613 11.6364H9.1051L7.74431 13.8182L9.11647 16.0001H8.18749L7.20453 14.3694L6.22442 16.0001H5.2926L6.65056 13.8182L5.30965 11.6364H6.24147Z" fill="black"/>
+                <path d="M9.97726 16.0001V11.6364H10.7926V12.3467H10.8466C10.9375 12.1061 11.0862 11.9186 11.2926 11.7842C11.499 11.6478 11.7462 11.5796 12.0341 11.5796C12.3257 11.5796 12.5701 11.6478 12.767 11.7842C12.9659 11.9205 13.1127 12.108 13.2074 12.3467H13.2528C13.357 12.1137 13.5227 11.9281 13.75 11.7898C13.9773 11.6497 14.2481 11.5796 14.5625 11.5796C14.9583 11.5796 15.2812 11.7037 15.5312 11.9518C15.7831 12.1999 15.9091 12.5739 15.9091 13.0739V16.0001H15.0596V13.1535C15.0596 12.858 14.9792 12.644 14.8182 12.5114C14.6572 12.3789 14.465 12.3126 14.2415 12.3126C13.965 12.3126 13.75 12.3978 13.5966 12.5682C13.4432 12.7368 13.3665 12.9537 13.3665 13.2188V16.0001H12.5199V13.0995C12.5199 12.8628 12.446 12.6724 12.2983 12.5285C12.1506 12.3845 11.9583 12.3126 11.7216 12.3126C11.5606 12.3126 11.4119 12.3552 11.2756 12.4404C11.1411 12.5237 11.0322 12.6402 10.9489 12.7898C10.8674 12.9395 10.8267 13.1128 10.8267 13.3097V16.0001H9.97726Z" fill="black"/>
+                <path d="M17.897 10.1819V16.0001H17.0476V10.1819H17.897Z" fill="black"/>
+              </svg>
+              <span class="document__name">Companyname 11/23</span>
+            </div>
+            <button class="document__action-button">
+              <svg class="document__action-download" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 12L12 17L7 12" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 5L12 16" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="5.75" y1="18.25" x2="18.25" y2="18.25" stroke="#292D32" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <svg class="document__action-refresh" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.55 21.67C18.84 20.54 22 16.64 22 12C22 6.48 17.56 2 12 2C5.33 2 2 7.56 2 7.56M2 7.56V3M2 7.56H4.01H6.44" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12C2 17.52 6.48 22 12 22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+              </svg>
+            </button>
+          </div>
+          <!-- статус файла -->
+          <div class="document__status">
+            <div class="document__status-indicator">
+              <svg class="document__status-icon document__status-icon--success" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.833332 4.375L2.64226 6.1387C3.41901 6.89604 4.65791 6.89604 5.43466 6.1387L9.16667 2.5" stroke="white" stroke-width="1.5"/>
+              </svg>
+              <svg class="document__status-icon document__status-icon--processing" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="6" y="10" font-family="Inter" font-size="12" font-weight="600" fill="white" text-anchor="middle">!</text>
+              </svg>
+            </div>
+            <span class="document__status-text">Медиаплан от 1.06.22 готов</span>
+          </div>
+        </div>
+    </template>
+  <!-- конец шаблона Файла-->
+
+<!-- Шаблон для сообщений -->
+  <template id="message-template">
+  <div class="message__container">
+    <div class="message__image-container">
+      <img src="./img/photo.jpg" alt="user's photo" class="message__image">
+    </div>
+    <div class="message__content">
+      <p class="message__text"></p>
+      <div class="message__info">
+        <span class="message__owner">Jim</span>
+        <span class="message__time"></span>
+      </div>
+    </div>
+  </div>
+  </template>
+<!-- Конец шаблона для сообщений -->
+
+<!-- Шаблон оповещений в чат-->
+<template id="notification-template">
+  <div class="message__container notification__container">
+    <div class="message__content">
+      <p class="message__text notification__text">
+        <span class="notification__name"></span>
+        <span class="notification__status"></span>
+      </p>
+      <div class="message__info">
+        <span class="message__time notification__time"></span>
+      </div>
+    </div>
+  </div>
+</template>
+<!-- Конец шаблона оповещений в чат-->
+
+<!-- конец шаблонов -->
+
+    <div class="container main__container">
+      <div class="main__wrapper">
+        <div class="main__files">
+          <div class="main__files-container">
+            <!-- Раздел файлов -->
+            <section class="main__files-content">
+              <h5 class="main__files-title">Файлы</h5>
+              <!-- Заглушка, когда нет файлов -->
+              <div class="main__files-cap">
+                <img src="./img/shiny_files.png" alt="dif color directories" class="main__files-img">
+                <p class="main__files-text">Закажи у личного помощника медиаплан. Он появится в этом разделе</p>
+              </div>
+              <!-- Список файлов -->
+              <div class="main__files-list main__mediaplan-list">
+                <!-- Медиаплан -->
+                <section class="main__file-section main__file-section--mediaplans">
+                  <!-- Заголовок -->
+                  <div class="main__file-section-header">
+                    <h6 class="main__file-section-title">Медиапланы</h6>
+                    <button class="main__file-section-toggle-button" id="main__file-toggle--mediaplan">
+                        <svg class="main__file-section-toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M19.92 15.05L13.4 8.53001C12.63 7.76001 11.37 7.76001 10.6 8.53001L4.07999 15.05" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                  </div>
+                  <!-- Бокс для листа и "показать еще" -->
+                  <ul class="main__file-section-content" id="main__file-mediaplan-list">
+                    
+                      <!-- Вставляем сюда -->
+   
+                  </ul>
+                  <a href="" class="main__file-showmore">Показать еще</a>
+                </section>
+                <!-- Отчеты -->
+                <section class="main__file-section main__file-section--reports">
+                  <!-- Заголовок -->
+                  <div class="main__file-section-header">
+                    <h6 class="main__file-section-title">Отчеты</h6>
+                    <button class="main__file-section-toggle-button" id="main__file-toggle--report">
+                        <svg class="main__file-section-toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M19.92 15.05L13.4 8.53001C12.63 7.76001 11.37 7.76001 10.6 8.53001L4.07999 15.05" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                  </div>
+                  <!-- Бокс для листа и "показать еще" -->
+                  <ul class="main__file-section-content" id="main__file-report-list">
+
+                    <!-- Вставляем сюда -->
+
+                  </ul>
+                  <a href="" class="main__file-showmore">Показать еще</a>
+                </section>
+              </div>
+            </section>
+            <!-- Кнопки в res375px -->
+            <div class="main__files-links">
+              <a href="" class="main__files-link">
+                <span class="main__files-link-text">Медиапланы</span>
+                <div class="document__status-indicator document__files_link-status">
+                  <svg class="document__status-icon document__status-icon--success" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.833332 4.375L2.64226 6.1387C3.41901 6.89604 4.65791 6.89604 5.43466 6.1387L9.16667 2.5" stroke="white" stroke-width="1.5"/>
+                  </svg>
+                  <svg class="document__status-icon document__status-icon--processing" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="6" y="10" font-family="Inter" font-size="12" font-weight="600" fill="white" text-anchor="middle">!</text>
+                  </svg>
+                </div>
+              </a>
+              <a href="" class="main__files-link">
+                <span class="main__files-link-text">Отчеты</span>
+                <div class="document__status-indicator document__files_link-status">
+                  <svg class="document__status-icon document__status-icon--success" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.833332 4.375L2.64226 6.1387C3.41901 6.89604 4.65791 6.89604 5.43466 6.1387L9.16667 2.5" stroke="white" stroke-width="1.5"/>
+                  </svg>
+                  <svg class="document__status-icon document__status-icon--processing" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="6" y="10" font-family="Inter" font-size="12" font-weight="600" fill="white" text-anchor="middle">!</text>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- чат -->
+        <div class="main__chat">
+          <div class="main__chat-container">
+            <div class="main__chat-wrapper">
+            <!-- Заголовок чата -->
+            <div class="main__chat-header">
+              <h5 class="main__chat-title">Личный помощник</h5>
+              <div class="main__chat-user-info">
+                <span class="main__chat-name">Jim Davidson</span>
+                <a href="" class="main__chat-email">Jim Davidson@adaurum.ru</a>
+              </div>
+              <!-- кнопка выпадающего меню -->
+              <div class="main__chat-settings">
+                <input type="checkbox" class="main__chat-toggle-input" id="chat-toggle">
+                <label class="main__chat-toggle-label" for="chat-toggle" aria-label="chat settings">
+                  <span class="main__chat-toggle-icon">
+                    <svg width="5" height="21" viewBox="0 0 5 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="2.5" cy="2.5" r="2.5" fill="#2F2F2F"/>
+                      <circle cx="2.5" cy="10.5" r="2.5" fill="#2F2F2F"/>
+                      <circle cx="2.5" cy="18.5" r="2.5" fill="#2F2F2F"/>
+                    </svg>
+                  </span>
+                </label>
+                <!-- Выпадающее меню -->
+                <ul class="main__chat-settings-list">
+                  <li class="main__chat-settings-item">
+                    <a href="" class="main__chat-settings-link">Обратная связь о работе сервиса</a>
+                  </li>
+                  <li class="main__chat-settings-item">
+                    <a href="" class="main__chat-settings-link">Сменить помощника</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- тело чата -->
+            <div class="main__chat-body">
+              <!-- Окно переписки -->
+              <div class="main__chat-output">
+                <!-- Заглушка при отсутствии переписки -->
+                <div class="main__chat-cap">
+                  <img class="main__chat-cap-ico" src="./img/girl-operator.png" alt="painting operator girl">
+                  <p class="main__chat-cap-text">Это чат с администратором. Ты можешь с ним пообщаться по любому вопросу о нашем сервисе и узнать о ходе работы</p>
+                </div>
+                <div class="main__chat-talk" id='chat_talk'>
+                  <span class="main__chat-date"></span>
+
+                      <!-- сюда вставляются сообщения -->
+
+                </div>
+              </div>
+              <!-- Окно набора текста -->
+              <div class="main__chat-input">
+                <div class="main__chat-orders">
+                  <button class="main__chat-order main__chat-mediaplanorder">Заказать медиаплан</button>
+                  <button class="main__chat-order main__chat-reportorder">Заказать отчет</button>
+                </div>
+                <div class="main__chat-message-box">
+                  <textarea name="" id="" class="main__chat-textarea" placeholder="Введите сообщение для администратора"></textarea>
+                  <div class="main__chat-actions">
+                    <div class="main__chat-attach">
+                      <button class="main__chat-action main__chat-attach-directory">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12.0601 16.5V11.5" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M14.5 14H9.5" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M2 13.02V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M22 14.99V17C22 21 21 22 17 22H7C3 22 2 21 2 17" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                      <button class="main__chat-action main__chat-attach-picture">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2 12.99V15C2 20 4 22 9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M11 8C11 9.1 10.1 10 9 10C7.9 10 7 9.1 7 8C7 6.9 7.9 6 9 6" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="main__chat-enter">
+                      <button class="main__chat-action main__chat-send" id="send_button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M15.89 3.49C19.7 2.22 21.77 4.3 20.51 8.11L17.68 16.6C15.78 22.31 12.66 22.31 10.76 16.6L9.91999 14.08L7.39999 13.24C1.68999 11.34 1.68999 8.23 7.39999 6.32L12 4.79" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M10.11 13.65L13.69 10.06" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </button>
+                      <span class="main__chat-enter-text">Enter</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  <footer>
+    <div class="container footer__container">
+        <ul class="footer__nav">
+          <li class="footer__item">
+            <img src="./img/pinkchicken_header_bw.png" alt="site logo black and white" class="footer__logo">
+          </li>
+          <li class="footer__item">
+            <a href="" class="footer__link">Политика конфиденциальности</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="mailto:pinkchicken@adaurum.ru" >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5H7" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 16.5H8" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12.5H5" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              pinkchicken@adaurum.ru
+            </a>
+          </li>
+          <li class="footer__item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8.0001 3H9.0001C7.0501 8.84 7.0501 15.16 9.0001 21H8.0001" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15 3C16.95 8.84 16.95 15.16 15 21" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 16V15C8.84 16.95 15.16 16.95 21 15V16" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 9.00001C8.84 7.05001 15.16 7.05001 21 9.00001" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <a href="" class="footer__lang-link footer__lang-link--active">Ru</a>
+            <a href="" class="footer__lang-link">En</a>
+            <a href="" class="footer__lang-link">Tur</a>
+          </li>
+          <li class="footer__item">
+            <a href="" class="footer__link">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20ZM20.7167 14.7649C18.7714 15.574 14.8835 17.2487 9.05313 19.7889C8.10637 20.1654 7.61041 20.5337 7.56526 20.8939C7.48896 21.5025 8.25117 21.7422 9.2891 22.0686C9.43028 22.1129 9.57657 22.1589 9.72654 22.2077C10.7477 22.5396 12.1214 22.928 12.8355 22.9434C13.4832 22.9574 14.2062 22.6903 15.0044 22.1422C20.4519 18.465 23.264 16.6064 23.4405 16.5663C23.565 16.538 23.7376 16.5025 23.8546 16.6064C23.9715 16.7104 23.96 16.9072 23.9476 16.96C23.8721 17.2819 20.8802 20.0635 19.3319 21.5029C18.8492 21.9517 18.5068 22.27 18.4368 22.3427C18.28 22.5056 18.1202 22.6596 17.9666 22.8077C17.0179 23.7222 16.3065 24.4081 18.006 25.528C18.8227 26.0662 19.4762 26.5112 20.1282 26.9552C20.8402 27.4401 21.5504 27.9238 22.4693 28.5261C22.7034 28.6796 22.927 28.839 23.1448 28.9942C23.9734 29.585 24.7179 30.1157 25.6376 30.0311C26.1721 29.9819 26.7241 29.4794 27.0044 27.9806C27.667 24.4386 28.9694 16.7641 29.2703 13.6016C29.2967 13.3246 29.2635 12.97 29.2369 12.8143C29.2103 12.6586 29.1546 12.4368 28.9523 12.2727C28.7126 12.0782 28.3427 12.0372 28.1773 12.0401C27.425 12.0534 26.2709 12.4547 20.7167 14.7649Z" fill="url(#paint0_linear_1_1056)"/>
+                <defs>
+                <linearGradient id="paint0_linear_1_1056" x1="20" y1="0" x2="20" y2="39.7033" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2AABEE"/>
+                <stop offset="1" stop-color="#229ED9"/>
+                </linearGradient>
+                </defs>
+              </svg>
+            </a>
+            <a href="" class="footer__link">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="20" fill="#20B038"/>
+                <path d="M16.0916 13.9299C16.322 13.9393 16.5769 13.9501 16.8191 14.4885C16.9847 14.8566 17.2632 15.5427 17.4851 16.0896C17.6487 16.4925 17.7815 16.8198 17.8158 16.8884C17.8967 17.0501 17.9505 17.2388 17.8428 17.4547C17.8266 17.487 17.8117 17.5175 17.7974 17.5466C17.7164 17.7119 17.6569 17.8333 17.5198 17.9939C17.466 18.0566 17.4104 18.1243 17.3549 18.1919C17.2433 18.3276 17.1316 18.4634 17.0347 18.5601C16.8726 18.7213 16.7041 18.8964 16.8927 19.2198C17.0814 19.5434 17.7303 20.6017 18.6914 21.4586C19.7239 22.3792 20.6209 22.7686 21.0764 22.9664C21.1659 23.0052 21.2383 23.0366 21.2914 23.0633C21.6147 23.2249 21.8033 23.198 21.9919 22.9819C22.1806 22.7663 22.7998 22.0383 23.0154 21.7149C23.231 21.3913 23.4466 21.4452 23.7429 21.5529C24.0394 21.6607 25.6289 22.443 25.9522 22.6047C26.0152 22.6362 26.0742 22.6646 26.1288 22.691C26.3545 22.7999 26.5069 22.8734 26.5719 22.9819C26.6528 23.1172 26.6528 23.7642 26.3833 24.5191C26.1139 25.274 24.7938 26.0021 24.201 26.056C24.144 26.0612 24.0873 26.0679 24.0289 26.0747C23.4811 26.1391 22.7896 26.2204 20.3213 25.2471C17.2841 24.0494 15.2815 21.0812 14.8678 20.468C14.8338 20.4177 14.8106 20.3833 14.7983 20.367L14.7947 20.3621C14.6204 20.1292 13.4782 18.6027 13.4782 17.0231C13.4782 15.5342 14.21 14.7537 14.5468 14.3946C14.5698 14.3701 14.591 14.3475 14.6099 14.3268C14.9061 14.0033 15.2564 13.9223 15.472 13.9223C15.4838 13.9223 15.4956 13.9223 15.5074 13.9223C15.711 13.9223 15.9135 13.9223 16.0916 13.9299Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.85341 26.3448C7.70482 24.387 7.10442 22.1681 7.10442 19.8709C7.10442 12.7444 12.9257 6.94922 20.0522 6.94922C23.5241 6.94922 26.761 8.30665 29.2149 10.7344C31.6426 13.1882 33 16.4251 33 19.897C33 27.0235 27.1787 32.8187 20.0522 32.8187C17.8855 32.8187 15.745 32.2966 13.8655 31.2524L7 33.0536L8.85341 26.3448ZM10.9418 25.6139L11.2028 26.0054L10.1064 29.9733L14.1787 28.903L14.5703 29.138C16.2149 30.1299 18.1205 30.652 20.0522 30.652C25.9779 30.652 30.8072 25.8227 30.8072 19.897C30.8072 17.0255 29.6847 14.3107 27.6486 12.2745C25.6386 10.2645 22.9237 9.14199 20.0522 9.14199C14.1265 9.14199 9.29719 13.9452 9.29719 19.897C9.29719 21.9071 9.87149 23.891 10.9418 25.6139Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+    </div>
+  </footer>
+</body>
+</html>
+
